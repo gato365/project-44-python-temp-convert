@@ -20,11 +20,12 @@ while True:
         print("Invalid choice. Please enter 1 for Celsius to Fahrenheit or 2 for Fahrenheit to Celsius.")
         continue
 
-    try:
-        temperature = float(input("Enter the temperature to convert: "))
-    except ValueError:
-        print("Invalid input. Please enter a number.")
-        continue
+    while True:
+        try:
+            temperature = float(input("Enter the temperature to convert: "))
+            break
+        except ValueError:
+            print("Invalid input. Please enter a number.")
 
     if choice == '1':
         print(f"{temperature}°C is {celsius_to_fahrenheit(temperature):.2f}°F")
